@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lunaris</title>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="hero">
+  <nav class="navbar">
+    <a href="#" class="logo">LUNARIS</a>
+    <ul class="nav-links">
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    
+    <div class="hamburger" id="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </nav>
+
+  <div class="hero-content">
+    <div class="hero-top">
+      <div class="hero-left">
+        <h1>Begin Your Lunar Journey</h1>
+        <p class="subtitle">The first ever commercial space tourism platform.</p>
+      </div>
+      
+      <div class="hero-right">
+        <div class="countdown-container">
+          <p class="countdown-text">Next departure in:</p>
+          <div class="countdown-timer" id="countdown-timer">
+            <div class="countdown-item">
+              <span class="countdown-number" id="days">00</span>
+              <span class="countdown-label">DAYS</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number" id="hours">00</span>
+              <span class="countdown-label">HRS</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number" id="minutes">00</span>
+              <span class="countdown-label">MINS</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number" id="seconds">00</span>
+              <span class="countdown-label">SECS</span>
+            </div>
+          </div>
+        </div>
+        <button id="book-now" class="cta-button">Book Your Seat</button>
+      </div>
+    </div>
+
+    <div class="hero-bottom">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+        <div class="progress-glow"></div>
+      </div>
+      <p class="progress-text">67% booked for Moon 2035!</p>
+    </div>
+  </div>
+</header>
+
+<section id="how-it-works" class="section">
+  <h2 class="fade-in">How It Works</h2>
+  <div class="steps">
+    <div class="step-card slide-up">
+      <div class="step-icon">1</div>
+      <h3>Reserve</h3>
+      <p>Pay a $5,000 deposit to secure your seat</p>
+    </div>
+    <div class="step-card slide-up">
+      <div class="step-icon">2</div>
+      <h3>Train</h3>
+      <p>Complete our 6-month astronaut prep program</p>
+    </div>
+    <div class="step-card slide-up">
+      <div class="step-icon">3</div>
+      <h3>Launch</h3>
+      <p>Depart from Kennedy Space Center to lunar orbit</p>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="section bg-dark">
+  <h2 class="fade-in">Mission Packages</h2>
+  <div class="pricing-cards">
+    <div class="pricing-card slide-up">
+      <h3>Lunar Flyby</h3>
+      <p class="package-subtitle">7-day Mission</p>
+      <div class="price">$450,000</div>
+      <ul>
+        <li>Orbit the Moon</li>
+        <li>Zero-gravity Experience</li>
+        <li>Exclusive Photo Opportunity</li>
+      </ul>
+      <button class="select-btn" onclick="window.open('https://www.youtube.com/watch?v=xvFZjo5PgG0', '_blank')">Select</button>
+    </div>
+    <div class="pricing-card featured slide-up">
+      <div class="featured-tag">MOST POPULAR</div>
+      <h3>Lunar Landing</h3>
+      <p class="package-subtitle">14-day Expedition</p>
+      <div class="price">$1.2M</div>
+      <ul>
+        <li>Grand Tour of the Moon</li>
+        <li>Elite Lunar Accommodation</li>
+        <li>Personalized Spacesuit and Keepsake</li>
+      </ul>
+      <button class="select-btn primary" onclick="window.open('https://www.youtube.com/watch?v=xvFZjo5PgG0', '_blank')">Select</button>
+    </div>
+    <div class="pricing-card slide-up">
+      <h3>Orbital Resort</h3>
+      <p class="package-subtitle">10-day Retreat</p>
+      <div class="price">$850,000</div>
+      <ul>
+        <li>Private Astral Suite</li>
+        <li>Interstellar Club & Lounge</li>
+        <li>Gourmet Celestial Banquet</li>
+      </ul>
+      <button class="select-btn" onclick="window.open('https://www.youtube.com/watch?v=xvFZjo5PgG0', '_blank')">Select</button>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="section">
+  <h2 class="fade-in">Frequently Asked Questions</h2>
+  <div class="faq-container">
+    <div class="faq-item slide-up">
+      <h3>Is this real?</h3>
+      <p>Currently conceptual! We're building partnerships with aerospace companies for future space tourism. Follow us to stay tune!</p>
+    </div>
+    <div class="faq-item slide-up">
+      <h3>What if I get space sick?</h3>
+      <p>All passengers undergo medical screening and receive professional training during prep.</p>
+    </div>
+    <div class="faq-item slide-up">
+      <h3>Can I cancel?</h3>
+      <p>Deposits are refundable up to 24 months before launch date.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <div class="logo">LUNARIS</div>
+    <p>© 2025 Lunaris Space Tourism. Making the impossible accessible.</p>
+    <div class="social-links">
+      <a href="https://github.com/reishasholihah" target="_blank" rel="noopener">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://github.com/reishasholihah" target="_blank" rel="noopener">
+        <i class="fab fa-x-twitter"></i>
+      </a>
+      <a href="https://github.com/reishasholihah" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/reishasholihah" target="_blank" rel="noopener">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://github.com/reishasholihah" target="_blank" rel="noopener">
+        <i class="fab fa-facebook"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
