@@ -159,12 +159,86 @@ const updateCountdownDisplay = (distance) => {
   document.getElementById('seconds').innerHTML = seconds.toString().padStart(2, '0');
 };
 
+// Modal Management
+const openModal = (modalId) => {
+  const modal = document.getElementById(modalId);
+  if (modal) {
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+};
+
+const closeModal = (modalId) => {
+  const modal = document.getElementById(modalId);
+  if (modal) {
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+    const form = modal.querySelector('form');
+    if (form) form.reset();
+  }
+};
+
+// Booking & Success Modals
+const initBookingModal = () => {
+  const selectButtons = document.querySelectorAll('.select-btn');
+  selectButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeMobileMenu();
+      openModal('booking-modal');
+    });
+  });
+
+  const bookingCloseBtn = document.getElementById('close-booking');
+  if (bookingCloseBtn) {
+    bookingCloseBtn.addEventListener('click', () => closeModal('booking-modal'));
+  }
+
+  const successCloseBtn = document.getElementById('close-success');
+  if (successCloseBtn) {
+    successCloseBtn.addEventListener('click', () => closeModal('success-modal'));
+  }
+
+  const form = document.getElementById('booking-form');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      closeModal('booking-modal');
+      openModal('success-modal');
+    });
+  }
+
+  // Close modals on outside click
+  ['booking-modal', 'success-modal'].forEach(id => {
+    const modal = document.getElementById(id);
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          closeModal(id);
+        }
+      });
+    }
+  });
+
+  // Escape key support
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (document.getElementById('booking-modal').style.display === 'flex') {
+        closeModal('booking-modal');
+      } else if (document.getElementById('success-modal').style.display === 'flex') {
+        closeModal('success-modal');
+      }
+    }
+  });
+};
+
 // Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll();
   initMobileMenu();
   initAnimations();
   initCountdownTimer();
+  initBookingModal();
   
   // Logo click handler
   const logo = document.querySelector('.logo');
@@ -192,4 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 5000);
     }
   });
+
+  document.getElementById('booking-modal')?.style.setProperty('display', 'none', 'important');
+  document.getElementById('success-modal')?.style.setProperty('display', 'none', 'important');
 });

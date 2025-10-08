@@ -70,7 +70,6 @@
     <div class="hero-bottom">
       <div class="progress-bar">
         <div class="progress-fill" id="progress-fill"></div>
-        <div class="progress-glow"></div>
       </div>
       <p class="progress-text">67% booked for Moon 2035!</p>
     </div>
@@ -110,7 +109,7 @@
         <li>Zero-gravity Experience</li>
         <li>Exclusive Photo Opportunity</li>
       </ul>
-      <button class="select-btn" onclick="window.open('https://www.youtube.com/watch?v=xvFZjo5PgG0', '_blank')">Select</button>
+      <button class="select-btn">Select</button>
     </div>
     <div class="pricing-card featured slide-up">
       <div class="featured-tag">MOST POPULAR</div>
@@ -122,7 +121,7 @@
         <li>Elite Lunar Accommodation</li>
         <li>Personalized Spacesuit and Keepsake</li>
       </ul>
-      <button class="select-btn primary" onclick="window.open('https://www.youtube.com/watch?v=xvFZjo5PgG0', '_blank')">Select</button>
+      <button class="select-btn primary">Select</button>
     </div>
     <div class="pricing-card slide-up">
       <h3>Orbital Resort</h3>
@@ -133,7 +132,7 @@
         <li>Interstellar Club & Lounge</li>
         <li>Gourmet Celestial Banquet</li>
       </ul>
-      <button class="select-btn" onclick="window.open('https://www.youtube.com/watch?v=xvFZjo5PgG0', '_blank')">Select</button>
+      <button class="select-btn">Select</button>
     </div>
   </div>
 </section>
@@ -179,6 +178,50 @@
     </div>
   </div>
 </footer>
+
+<div id="booking-modal" class="modal">
+  <div class="modal-content">
+    <h3>Reserve Your Lunar Seat</h3>
+    <p class="modal-subtitle">Secure your spot with a $5,000 refundable deposit</p>
+    <form id="booking-form">
+      <div class="form-row">
+        <input type="text" name="first_name" placeholder="First Name" required>
+        <input type="text" name="last_name" placeholder="Last Name" required>
+      </div>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number">
+      <select name="mission" required>
+        <option value="" disabled selected>Select Mission Package</option>
+        <option value="flyby">Lunar Flyby</option>
+        <option value="landing">Lunar Landing</option>
+        <option value="resort">Orbital Resort</option>
+      </select>
+
+      <div class="checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" name="newsletter" value="yes">
+          <span>Notify me about future missions & exclusive offers</span>
+        </label>
+        <label class="checkbox-label required">
+          <input type="checkbox" name="tnc" value="accepted" required>
+          <span>I agree to the <a href="https://youtu.be/OIuG1bBkfs0?si=kJsTF-DygpCkvAxX" class="tnc-link" target="_blank">Terms & Conditions</a></span>
+        </label>
+      </div>
+
+      <button type="submit" class="modal-submit">Confirm Reservation</button>
+      <button type="button" id="close-booking" class="modal-close-plain">Close</button>
+    </form>
+  </div>
+</div>
+
+<div id="success-modal" class="modal">
+  <div class="modal-content success">
+    <div class="success-icon">✓</div>
+    <h3>Reservation Confirmed!</h3>
+    <p class="modal-subtitle">Thank you! We’ve received your request and will contact you within 48 hours to finalize your journey.</p>
+    <button id="close-success" class="modal-close-btn">Close</button>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
